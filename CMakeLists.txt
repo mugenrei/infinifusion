@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.24)
+project(infinifusion VERSION 0.9.0 LANGUAGES C CXX)
+set(INFINIFUSION_PROFILE "Release" CACHE STRING "Public runtime profile")
+if(NOT INFINIFUSION_PROFILE STREQUAL "Release")
+    message(FATAL_ERROR "This source distribution contains the Release runtime")
+endif()
+include(cmake/Runtime.cmake)

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Adapters">
+      <UniqueIdentifier>{9A9DEE28-8958-45F4-A85B-C152B3C2A9B8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Adapters\JSON">
+      <UniqueIdentifier>{54EAE62C-0A33-4EB3-9990-21CE3ED38965}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Bootstrap">
+      <UniqueIdentifier>{36B2B240-E2EF-4F54-BFCE-B5A10A949826}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{BF356F42-C111-4770-B14E-CE52BC6BE1E4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats">
+      <UniqueIdentifier>{F358C862-BC81-4B95-81E1-965BE8AA2EC2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Host">
+      <UniqueIdentifier>{09DF6571-0857-4E2F-A08D-981D90A3CF09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Runtime">
+      <UniqueIdentifier>{E024F442-CC42-4D90-A86A-3DC33B238210}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Unreal">
+      <UniqueIdentifier>{A5187FEA-0738-4F70-BAFB-47728DBDB452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\API">
+      <UniqueIdentifier>{C770F736-2396-4197-A63E-5E24CE0562D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Configuration">
+      <UniqueIdentifier>{8943F583-ECBE-4DF3-9E49-76FF324A3B49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Documentation">
+      <UniqueIdentifier>{A1FE4CD4-617E-460B-8BA4-90B01C5329C1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\infinifusion\api.h">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="include\infinifusion\sdk.hpp">
+      <Filter>Header Files\API</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapters\json\json_mods.hpp">
+      <Filter>Source Files\Adapters\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapters\json\property_values.hpp">
+      <Filter>Source Files\Adapters\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bootstrap\startup.hpp">
+      <Filter>Source Files\Bootstrap</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\engine.hpp">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\provider.hpp">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\result.hpp">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\table_patch.hpp">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\tbcr_patch.hpp">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\value.hpp">
+      <Filter>Source Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\formats\json.hpp">
+      <Filter>Source Files\Formats</Filter>
+    </ClInclude>
+    <ClInclude Include="src\formats\tbcr.hpp">
+      <Filter>Source Files\Formats</Filter>
+    </ClInclude>
+    <ClInclude Include="src\formats\tbcr_schema.hpp">
+      <Filter>Source Files\Formats</Filter>
+    </ClInclude>
+    <ClInclude Include="src\host\api_host.hpp">
+      <Filter>Source Files\Host</Filter>
+    </ClInclude>
+    <ClInclude Include="src\host\client_session.hpp">
+      <Filter>Source Files\Host</Filter>
+    </ClInclude>
+    <ClInclude Include="src\host\game_services.hpp">
+      <Filter>Source Files\Host</Filter>
+    </ClInclude>
+    <ClInclude Include="src\host\tbcr_service.hpp">
+      <Filter>Source Files\Host</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\build_profile.hpp">
+      <Filter>Source Files\Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\log_queue.hpp">
+      <Filter>Source Files\Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\runtime.hpp">
+      <Filter>Source Files\Runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="src\unreal\blueprint_creation_trampoline.hpp">
+      <Filter>Source Files\Unreal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\unreal\blueprint_template_trampoline.hpp">
+      <Filter>Source Files\Unreal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\unreal\property_import.hpp">
+      <Filter>Source Files\Unreal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\unreal\property_numeric.hpp">
+      <Filter>Source Files\Unreal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\unreal\property_text.hpp">
+      <Filter>Source Files\Unreal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\unreal\reflected_name.hpp">
+      <Filter>Source Files\Unreal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\unreal\tbcr_publication.hpp">
+      <Filter>Source Files\Unreal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\unreal\tbcr_source.hpp">
+      <Filter>Source Files\Unreal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\adapters\json\json_mods.cpp">
+      <Filter>Source Files\Adapters\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapters\json\property_values.cpp">
+      <Filter>Source Files\Adapters\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bootstrap\proxy.cpp">
+      <Filter>Source Files\Bootstrap</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\engine.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\provider.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\table_patch.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\tbcr_patch.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\value.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\formats\json.cpp">
+      <Filter>Source Files\Formats</Filter>
+    </ClCompile>
+    <ClCompile Include="src\formats\tbcr.cpp">
+      <Filter>Source Files\Formats</Filter>
+    </ClCompile>
+    <ClCompile Include="src\formats\tbcr_schema.cpp">
+      <Filter>Source Files\Formats</Filter>
+    </ClCompile>
+    <ClCompile Include="src\host\api_host.cpp">
+      <Filter>Source Files\Host</Filter>
+    </ClCompile>
+    <ClCompile Include="src\host\client_session.cpp">
+      <Filter>Source Files\Host</Filter>
+    </ClCompile>
+    <ClCompile Include="src\host\tbcr_service.cpp">
+      <Filter>Source Files\Host</Filter>
+    </ClCompile>
+    <ClCompile Include="src\runtime\runtime.cpp">
+      <Filter>Source Files\Runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="src\unreal\property_import.cpp">
+      <Filter>Source Files\Unreal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\unreal\property_text.cpp">
+      <Filter>Source Files\Unreal</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="src\bootstrap\proxy_stubs.asm">
+      <Filter>Source Files\Bootstrap</Filter>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\infinifusion.ini">
+      <Filter>Configuration</Filter>
+    </None>
+    <None Include="src\bootstrap\proxy_exports.inc">
+      <Filter>Source Files\Bootstrap</Filter>
+    </None>
+    <None Include="src\bootstrap\winmm.def">
+      <Filter>Source Files\Bootstrap</Filter>
+    </None>
+    <None Include="src\runtime\api_runtime.inc">
+      <Filter>Source Files\Runtime</Filter>
+    </None>
+    <None Include="src\unreal\asset_load_provider.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\blueprint_template_boundary.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\engine_allocator_probe.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\game_services.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\managed_value_bridge.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\memory_copy.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\message_definition_provider.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\native_entry_hook.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\object_discovery.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\object_inspection.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\object_property_provider.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\object_reflection.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\object_serial.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\object_targets.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\property_chain.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\table_definition_provider.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="src\unreal\tbcr_trace.inc">
+      <Filter>Source Files\Unreal</Filter>
+    </None>
+    <None Include="ACKNOWLEDGEMENTS.md">
+      <Filter>Documentation</Filter>
+    </None>
+    <None Include="LICENSE">
+      <Filter>Documentation</Filter>
+    </None>
+    <None Include="MOD-FORMAT.md">
+      <Filter>Documentation</Filter>
+    </None>
+    <None Include="README.md">
+      <Filter>Documentation</Filter>
+    </None>
+  </ItemGroup>
+</Project>

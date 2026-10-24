@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{0EC10F2E-A8AA-4DC8-ACF0-647F53FF7F2B}</ProjectGuid>
+    <RootNamespace>Infinifusion</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Infinifusion</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\obj\$(Configuration)\</IntDir>
+    <TargetName>winmm</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\obj\$(Configuration)\</IntDir>
+    <TargetName>winmm</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;_USRDLL;INFINIFUSION_NATIVE_API=1;NOMINMAX;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 /Zc:__cplusplus /Zc:preprocessor %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <ModuleDefinitionFile>src\bootstrap\winmm.def</ModuleDefinitionFile>
+      <AdditionalDependencies>kernel32.lib;psapi.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProgramDatabaseFile>$(OutDir)winmm.pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(IntDir)winmm.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(ProjectDir)config\infinifusion.ini" "$(OutDir)infinifusion.ini" &gt;nul</Command>
+      <Message>Copying configuration to output directory...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_USRDLL;INFINIFUSION_NATIVE_API=1;NOMINMAX;WIN32_LEAN_AND_MEAN;UNICODE;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 /Zc:__cplusplus /Zc:preprocessor %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <ModuleDefinitionFile>src\bootstrap\winmm.def</ModuleDefinitionFile>
+      <AdditionalDependencies>kernel32.lib;psapi.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProgramDatabaseFile>$(OutDir)winmm.pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(IntDir)winmm.lib</ImportLibrary>
+      <AdditionalOptions>/PDBALTPATH:winmm.pdb %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(ProjectDir)config\infinifusion.ini" "$(OutDir)infinifusion.ini" &gt;nul</Command>
+      <Message>Copying configuration to output directory...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\infinifusion\api.h" />
+    <ClInclude Include="include\infinifusion\sdk.hpp" />
+    <ClInclude Include="src\adapters\json\json_mods.hpp" />
+    <ClInclude Include="src\adapters\json\property_values.hpp" />
+    <ClInclude Include="src\bootstrap\startup.hpp" />
+    <ClInclude Include="src\core\engine.hpp" />
+    <ClInclude Include="src\core\provider.hpp" />
+    <ClInclude Include="src\core\result.hpp" />
+    <ClInclude Include="src\core\table_patch.hpp" />
+    <ClInclude Include="src\core\tbcr_patch.hpp" />
+    <ClInclude Include="src\core\value.hpp" />
+    <ClInclude Include="src\formats\json.hpp" />
+    <ClInclude Include="src\formats\tbcr.hpp" />
+    <ClInclude Include="src\formats\tbcr_schema.hpp" />
+    <ClInclude Include="src\host\api_host.hpp" />
+    <ClInclude Include="src\host\client_session.hpp" />
+    <ClInclude Include="src\host\game_services.hpp" />
+    <ClInclude Include="src\host\tbcr_service.hpp" />
+    <ClInclude Include="src\runtime\build_profile.hpp" />
+    <ClInclude Include="src\runtime\log_queue.hpp" />
+    <ClInclude Include="src\runtime\runtime.hpp" />
+    <ClInclude Include="src\unreal\blueprint_creation_trampoline.hpp" />
+    <ClInclude Include="src\unreal\blueprint_template_trampoline.hpp" />
+    <ClInclude Include="src\unreal\property_import.hpp" />
+    <ClInclude Include="src\unreal\property_numeric.hpp" />
+    <ClInclude Include="src\unreal\property_text.hpp" />
+    <ClInclude Include="src\unreal\reflected_name.hpp" />
+    <ClInclude Include="src\unreal\tbcr_publication.hpp" />
+    <ClInclude Include="src\unreal\tbcr_source.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\adapters\json\json_mods.cpp" />
+    <ClCompile Include="src\adapters\json\property_values.cpp" />
+    <ClCompile Include="src\bootstrap\proxy.cpp" />
+    <ClCompile Include="src\core\engine.cpp" />
+    <ClCompile Include="src\core\provider.cpp" />
+    <ClCompile Include="src\core\table_patch.cpp" />
+    <ClCompile Include="src\core\tbcr_patch.cpp" />
+    <ClCompile Include="src\core\value.cpp" />
+    <ClCompile Include="src\formats\json.cpp" />
+    <ClCompile Include="src\formats\tbcr.cpp" />
+    <ClCompile Include="src\formats\tbcr_schema.cpp" />
+    <ClCompile Include="src\host\api_host.cpp" />
+    <ClCompile Include="src\host\client_session.cpp" />
+    <ClCompile Include="src\host\tbcr_service.cpp" />
+    <ClCompile Include="src\runtime\runtime.cpp" />
+    <ClCompile Include="src\unreal\property_import.cpp" />
+    <ClCompile Include="src\unreal\property_text.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="src\bootstrap\proxy_stubs.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\infinifusion.ini" />
+    <None Include="src\bootstrap\proxy_exports.inc" />
+    <None Include="src\bootstrap\winmm.def" />
+    <None Include="src\runtime\api_runtime.inc" />
+    <None Include="src\unreal\asset_load_provider.inc" />
+    <None Include="src\unreal\blueprint_template_boundary.inc" />
+    <None Include="src\unreal\engine_allocator_probe.inc" />
+    <None Include="src\unreal\game_services.inc" />
+    <None Include="src\unreal\managed_value_bridge.inc" />
+    <None Include="src\unreal\memory_copy.inc" />
+    <None Include="src\unreal\message_definition_provider.inc" />
+    <None Include="src\unreal\native_entry_hook.inc" />
+    <None Include="src\unreal\object_discovery.inc" />
+    <None Include="src\unreal\object_inspection.inc" />
+    <None Include="src\unreal\object_property_provider.inc" />
+    <None Include="src\unreal\object_reflection.inc" />
+    <None Include="src\unreal\object_serial.inc" />
+    <None Include="src\unreal\object_targets.inc" />
+    <None Include="src\unreal\property_chain.inc" />
+    <None Include="src\unreal\table_definition_provider.inc" />
+    <None Include="src\unreal\tbcr_trace.inc" />
+    <None Include="ACKNOWLEDGEMENTS.md" />
+    <None Include="LICENSE" />
+    <None Include="MOD-FORMAT.md" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>
